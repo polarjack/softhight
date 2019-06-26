@@ -1,0 +1,22 @@
+.nav-try {
+  height: 100px;
+  margin: 20px 0px;
+  background-color: pink;
+  width: 100%;
+}
+
+.Blocks {
+  height: 700px;
+  margin-left: auto;
+  position: relative;
+}
+
+.block-basic-wrap {
+  border: 2px black solid;
+  box-shadow: 3px 3px 2px #888888;
+  position: absolute;
+}
+
+.svg-wrap {
+  position: relative;
+}
