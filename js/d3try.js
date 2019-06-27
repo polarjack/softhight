@@ -77,35 +77,43 @@ async function fetchPending() {
       console.info(error);
     });
 
+  // if (result.length == 0) {
+  //   document.getElementById("pendding").innerHTML = `<h1>Pool is Empty</h1>`;
+  // }
+
   dataobj.children = result.map(v => {
-    console.log(v.value)
-    v.value = 1
+    console.log(v.value);
+    v.value = 1;
     return v;
   });
-  renderPennding(result.length * 6)
+  renderPennding(result.length * 6);
 }
 
 setInterval(async () => {
-  document
-    .getElementById("pendding")
-    .velocity({
+  document.getElementById("pendding").velocity(
+    {
       opacity: 0
-    },{
+    },
+    {
       duration: 1200
-    }, function() {
+    },
+    function() {
       document.getElementById("pendding").innerHTML = null;
-    })
-  document.getElementById("pendding").innerHTML += 
-    `<svg id="penddingInside" width="100%" height="100%" style="margin-top: 250px"></svg>`
-  console.log("round")
-  await fetchPending()
-  document
-    .getElementById("pendding")
-    .velocity({
+    }
+  );
+  document.getElementById(
+    "pendding"
+  ).innerHTML += `<svg id="penddingInside" width="100%" height="100%" style="margin-top: 250px"></svg>`;
+  console.log("round");
+  await fetchPending();
+  document.getElementById("pendding").velocity(
+    {
       opacity: 1
-    },{
+    },
+    {
       duration: 1500
-    })
-}, 2500)
+    }
+  );
+}, 5000);
 
 // renderPennding(100, 100)
